@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Decision Final 💖</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1a2a6c,#b21f1f,#fdbb2d);
+    font-family: Arial, sans-serif;
+    overflow:hidden;
+    color:white;
+    text-align:center;
+}
+.container{
+    background:#ffffff20;
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+button{
+    padding:10px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+#yes{
+    background:#ff4d6d;
+    color:white;
+}
+#no{
+    background:#444;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>¿Quieres ser mi San Valentín? 💖</h1>
+
+    <div class="buttons">
+        <button id="yes">SI 💘</button>
+        <button id="no">NO 😢</button>
+    </div>
+</div>
+
+<script>
+let noCount = 0;
+const maxClicks = 20;
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+noBtn.addEventListener("click", function(){
+    noCount++;
+    yesBtn.style.transform = `scale(${1 + (noCount*0.5)})`;
+
+    if(noCount >= maxClicks){
+        noBtn.style.display = "none";
+        yesBtn.style.transform = "scale(20)";
+    }
+});
+
+yesBtn.addEventListener("click", function(){
+    window.open("corazones.html", "_blank");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Amor Infinito 💖</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+    height:100vh;
+}
+
+h1{
+    position:absolute;
+    width:100%;
+    text-align:center;
+    top:40%;
+    font-size:60px;
+    color:white;
+    z-index:2;
+}
+
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    animation: fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>💖 AHORA ERES MI SAN VALENTÍN 💖</h1>
+
+<script>
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = Math.random()*30 + 20 + "px";
+    heart.style.animationDuration = Math.random()*3 + 2 + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+}
+
+setInterval(createHeart,100); // MUCHOS corazones
+</script>
+
+</body>
+</html>
